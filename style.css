@@ -1,0 +1,730 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+
+body{
+    background: #000;
+    background-size: cover;
+    color: rgba(255, 255, 255, .9);
+    height: 200vh;
+}
+
+
+/* NAVBAR */
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    padding: 32px 0;
+    z-index: 9;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li{
+    display: inline-block;
+    list-style: none;
+}
+
+li a{
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 2em;
+    font-weight: bold;
+    transition: .3s;
+}
+
+li a:hover{
+    color: #ff6f21;
+    letter-spacing: .5px;
+
+}
+
+/* NAVBAR */
+
+.arrow a{
+    color: #fff;
+}
+
+/* Sections */
+
+section{
+    width: 100%;
+    overflow: hidden;
+}
+
+    /* Section home */
+
+    .section.sec_home{
+        height: 100vh;
+        background: url(Home_sec_bg.jpg) center center no-repeat;
+        background-size: cover;
+
+    }
+    .section.sec_home::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .section.sec_home::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top,
+        #000000, #00000000,#00000000,
+        #00000000,#00000000,#00000000,
+        #00000000);
+        inset: 0;
+    }
+
+    .section.sec_home .content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .section.sec_home .caption{
+        z-index: 1;
+        text-align: center;
+        width: 900px;
+    }
+    .section.sec_home .caption h2{
+        margin: 1em;
+        font-size: 35px;
+        font-weight: bold;
+        animation: animate-h2 2s;
+        transform: translateY(-10px);
+    }
+    @keyframes animate-h2 {
+        0%{
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(-10px);
+        }
+    }
+    .section.sec_home .arrow{
+        width: 100%;
+        /* background-color: aqua; */
+        position: absolute;
+        bottom: 4em;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: animate 3s infinite;
+        
+    }
+
+    @keyframes animate {
+        0%{
+            bottom: 4em;
+        }
+        70%{
+            bottom: 6em;
+        }
+        100%{
+            bottom: 4em;
+        }
+    }
+
+    /* Section about Me */
+
+    .section.sec_aboutMe{
+        background-color: #000000;
+        height: 100vh;
+        scroll-behavior: smooth;
+        overflow: visible;
+    }
+    .section.sec_aboutMe .content
+    {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 5em;
+        height: 100%;
+        position: relative;
+    }
+    .section.sec_aboutMe img{
+        opacity: .5;
+        width: 1000px;
+        position: absolute;
+        right: 5px;
+        bottom: 0;
+    }
+    .section.sec_aboutMe .caption{
+        width: 700px;
+        z-index: 1;
+        position: absolute;
+        left: 20%;
+    }
+    .section.sec_aboutMe .caption h2{
+        font-size: 34px;
+        font-weight: 900;
+        color: #ff5900;
+    }
+    .section.sec_aboutMe .caption p{
+        font-size: 18px;
+        line-height: 1.5em;
+    }
+
+    /* Section Education */
+
+    .section.sec_education{
+        height: 100vh;
+        background: url(edu_sec_vector.png)center left no-repeat;
+        background-size: 700px;
+        background-position: 20% 55%;
+        z-index: -2;
+        position: relative;
+    }
+
+    .section.sec_education .caption{
+        width: 700px;
+        z-index: 3;
+        position: absolute;
+        right: 15%;
+        top: 30%;
+    }
+    .section.sec_education .caption h2{
+        font-size: 45px;
+        font-weight: bold;
+        margin-bottom: 1em;
+        color: #ff5900;
+    }
+    .section.sec_education .caption h4{
+        color: #ff6f21;
+    }
+    .section.sec_education .caption p{
+        font-size: 18px;
+        line-height: 1.5em;
+        margin-top: 10px;
+        margin-left: 4.2em;
+        text-shadow: 0 0 10px #000000c5;
+    }
+
+
+    /* Section Experiences */
+
+    .section.sec_experiences{
+        height: 100vh;
+        background: url(exp_sec_vector.png)center left no-repeat;
+        background-position: 80% 50%;
+        position: relative;
+        z-index: -2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section.sec_experiences .content{
+        position: absolute;
+        left: 15%;
+        top: 30%;
+    }
+    .section.sec_experiences .caption{
+        width: 700px;
+        height: 340px;
+        z-index: 3;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .section.sec_experiences .caption hr{
+        width: 90%;
+    }
+
+    ::-webkit-scrollbar{
+        width: 6px;
+    }
+    ::-webkit-scrollbar-track{
+        background-color: #00000000;
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color: #ff6f21;
+        border-radius: 100vw;
+    }
+    
+    .section.sec_experiences h2{
+        font-size: 45px;
+        font-weight: bold;
+        margin-bottom: .5em;
+        color: #ff5900;
+    }
+    .section.sec_experiences .caption h4{
+        color: #ff6f21;
+        font-size: 20px;
+    }
+    .section.sec_experiences .caption p{
+        font-size: 18px;
+        line-height: 1.8em;
+    }
+
+    .scrolldown{
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 3px;
+        margin-top: 1em;
+        color: #ff6f2199;
+    }
+
+    /* Section Skills */
+
+    .section.sec_skills{
+        height: 100vh;
+        background: url(skills_sec_vector.svg) center right no-repeat;
+        background-position: 15% 55%;
+        background-size: 600px;
+        position: relative;
+    }
+    .section.sec_skills .content{
+        overflow: hidden;
+        position: absolute;
+        top: 20%;
+        left: 45%;
+    }
+    .section.sec_skills .caption{
+        width: 800px;
+    }
+
+    .section.sec_skills h2{
+        color: #ff5900;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    
+    .section.sec_skills .row{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .section.sec_skills .card{
+        width: 55px;
+        height: 100px;
+        position: relative;
+        overflow: hidden;
+        display: block;
+        text-align: center;
+    }
+
+    .section.sec_skills .card img{
+        width: 55px;
+    }
+
+    .section.sec_skills h5{
+        margin-top: 1em;
+        margin-bottom: .5em;
+        color: #ff6f21;
+        font-size: 20px;
+    }
+
+    .row.r2,.row.r3{
+        margin-top: 1em;
+    }
+
+    .row.r2 .card{
+        width: auto;
+        height: auto;
+    }
+
+
+    /* Section Services */
+
+    .section.sec_services{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section.sec_services .box{
+        display: block;
+    }
+
+    .section.sec_services .content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section.sec_services .box h2{
+        text-align: center;
+        color: #ff5900;
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 3em;
+    }
+
+    .cardEx{
+        width: 700px;
+        height: 430px;
+        border-radius: 20px;
+        padding: 3em;
+        background-color: rgb(18, 18, 18);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(20px);
+        z-index: 5;
+        overflow: hidden;
+        margin: 0 4em 0 4em;
+    }
+    .cardEx h5{
+        font-size: 30px;
+        font-weight: bold;
+        color: #ff6f21;
+    }
+    
+    .cardEx .info{
+        display: inline;
+    }
+
+    .cardEx img{
+        width: 100px;
+    }
+
+    .cardEx p{
+        line-height: 2.4em;
+        font-size: 18px;
+    }
+
+
+
+
+    /* Section ContactMe */
+    .section.sec_contactMe{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url(exp_sec_bg.png) fixed center center no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+
+    .section.sec_contactMe::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .section.sec_contactMe .box{
+        width: 500px;
+        height: 600px;
+        z-index: 5;
+        border-radius: 20px;
+        backdrop-filter: blur(15px);
+        box-shadow: 7px 6px 30px #000,
+        -7px -6px 35px rgba(160, 160, 160, 0.4) ;
+    }
+
+    .section.sec_contactMe .box h2{
+        text-align: center;
+        color: #ff5900;
+        font-size: 35px;
+        margin-bottom: 1em;
+    }
+
+    .section.sec_contactMe .box .form{
+        padding: 40px;
+        width: 100%;
+        height: 100%;
+        
+    }
+    .section.sec_contactMe .box .form form{
+        padding: 3em;
+        display: grid;
+        overflow: hidden;
+    }
+
+    .section.sec_contactMe .box .form hr{
+        height: 2px;
+        background-color: #000;
+        border: none;
+    }
+
+    .section.sec_contactMe .box .form form label{
+        font-size: 20px;
+        color: #ff6f21;
+        margin-top: -1em;
+        margin-bottom: 2em;
+        font-weight: bold;
+        
+    }
+    .section.sec_contactMe .box .form form label input{
+        outline: none;
+        border: none;
+        border-radius: 50px;
+        padding:.5rem 1rem;
+        width: 100%;
+        color: #ffffff;
+        background-color: #0000004a;
+        letter-spacing: 1px;
+    }
+    .section.sec_contactMe .box .form form label textarea{
+        outline: none;
+        border: none;
+        border-radius: 20px;
+        padding:.5rem 1rem;
+        width: 100%;
+        color: #ffffff;
+        background-color: #0000004a;
+        resize: none;
+        letter-spacing: 1px;
+    }
+    .section.sec_contactMe .box .form form button{
+        background:#ff5900;
+        border: none;
+        outline: none;
+        width: 100%;
+        padding: .5em 1em;
+        border-radius: 50px;
+        font-weight: bold;
+        transition: .3s;
+    }
+    .section.sec_contactMe .box .form form button:hover{
+        background-color: #df4e00;
+        color: white;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .section.sec_contactMe .qr{
+        width: 100%;
+        margin-top: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .section.sec_contactMe img{
+        width: 150px;
+    }
+
+/* ========================================================== */
+/* -----------------------* Response *----------------------- */
+/* ========================================================== */
+
+
+
+@media only screen and (max-width:850px){
+
+        /* Navbar */
+        .navbar{
+            opacity: 0;
+        }
+
+        /* Section AboutMe */
+        .section.sec_aboutMe .content{
+            display: grid;
+        }
+        .section.sec_aboutMe img{
+            width: 450px;
+            right: 0;
+            bottom: 0;
+        }
+        .section.sec_aboutMe .caption{
+            position: relative;
+            width: 85vw;
+            left: 0;
+            bottom: 12em;
+        }
+        .section.sec_aboutMe .caption h2{
+            font-size: 27px;
+        }
+        .section.sec_aboutMe .caption p{
+            font-size: 16px;
+        }
+
+        /* Section Education */
+
+        .section.sec_education{
+            background: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .section.sec_education .caption{
+            width: 85vw;
+            height: auto;
+            position: relative;
+            right: 0;;
+            top: 0;
+        }
+
+        .section.sec_education .caption h2{
+            font-size: 30px;
+        }
+        .section.sec_education .caption p{
+            margin-left: 0;
+        }
+
+        /* Section Experiences */
+
+        .section.sec_experiences{
+            height: 100vh;
+            background: url(exp_sec_vector.png)center center no-repeat;
+            background-position: 50% 5%;
+            background-size: 300px;
+        }
+        .section.sec_experiences .content{
+            position: relative;
+            width: 80vw;
+            left: 0;
+            top: 8em;
+            overflow: hidden;
+        }
+        .section.sec_experiences .caption{
+            width: auto;
+            padding-right: 6px;
+        }
+
+        .section.sec_experiences h2{
+            font-size: 35px;
+        }
+
+        /* Section Skills */
+
+        .section.sec_skills{
+            background: none;
+            position: relative;
+            height: 830px;
+        }
+        .section.sec_skills .content{
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            right: 0;
+            left: 0;
+            top: 3em;
+            width: 100vw;
+            justify-content: center;
+        }
+        .section.sec_skills h5{
+            margin: 0;
+        }
+        .section.sec_skills .caption{
+            width: 90%;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .section.sec_skills .caption .row.r1{
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+        .section.sec_skills .card{
+            width: 130px;
+            height: 40px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0 10px 15px 10px;
+        }
+        .section.sec_skills .card img{
+            width: 40px;
+        }
+        .section.sec_skills .card .title{
+            font-size: 14px;
+        }
+
+        .section.sec_skills .caption .row.r2{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .section.sec_skills .caption .row.r3{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 1em;
+        }
+        .section.sec_skills .caption .row.r3 .card{
+            width: 130px;
+            height: auto;
+            display: flex;
+            
+        }
+
+        /* Section Services */
+
+        .section.sec_services{
+            display: flex;
+            flex-wrap: wrap;
+            height: 110vh;
+        }
+        .section.sec_services .content{
+            display: block;
+            height: 100%;
+        }
+        .section.sec_services .box h2{
+            margin-bottom: 1em;
+        }
+        .cardEx{
+            width: 90vw;
+            height: auto;
+            padding: 2em;
+            margin-bottom: 1em;
+        }
+        .cardEx h5{
+            font-size: 23px;
+        }
+        .cardEx img{
+            width: 60px;
+        }
+        .cardEx p{
+            line-height: 2em;
+            font-size: 14px;
+        }
+
+        /* Section ContactMe */
+
+        .section.sec_contactMe{
+            height: 120vh;
+        }
+
+        .section.sec_contactMe .box{
+            width: 350px;
+            height: 530px;
+        }
+        .section.sec_contactMe .box h2{
+            font-size: 25px;
+            margin-bottom: .3em;
+        }
+        .section.sec_contactMe .box .form{
+            padding: 30px;
+        }
+        .section.sec_contactMe .box .form form{
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+        .section.sec_contactMe img{
+            width: 100px;
+        }
+    }
+
+    
